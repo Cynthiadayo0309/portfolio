@@ -16,22 +16,52 @@ const routes = [
       {
         path: '',
         redirect: 'home',
+        meta: {
+          title: {
+            ja: 'Portfolio | Home',
+            en: 'Portfolio | Home'
+          }
+        }
       },
       {
         path: 'home',
         component: Home,
+        meta: {
+          title: {
+            ja: 'Portfolio | Home',
+            en: 'Portfolio | Home'
+          }
+        }
       },
       {
         path: 'about',
         component: About,
+        meta: {
+          title: {
+            ja: 'Portfolio | About',
+            en: 'Portfolio | About'
+          }
+        }
       },
       {
         path: 'skill',
         component: Skill,
+        meta: {
+          title: {
+            ja: 'Portfolio | Skill',
+            en: 'Portfolio | Skill'
+          }
+        }
       },
       {
         path: 'blog',
         component: Blog,
+        meta: {
+          title: {
+            ja: 'Portfolio | Blog',
+            en: 'Portfolio | Blog'
+          }
+        }
       }
     ]
   },
