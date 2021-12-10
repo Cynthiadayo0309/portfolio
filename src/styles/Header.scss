@@ -27,24 +27,24 @@ $pc-min: $sm + px;
 }
 #nav {
   display: flex;
-  justify-content: center;
-  padding: 10px;
+  justify-content: right;
+
+  a {
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+  }
 }
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  padding: 0 10px;
-}
-#nav a.router-link-exact-active {
-  color: white;
-}
+
 .drawer a {
-  color: #2c3e50;
+  color: #009DAE;
 }
+
 .v-toolbar__title {
   overflow: visible !important;
   margin-right: 50px !important;
 }
+
 .logo a {
   color: white;
 }
@@ -54,6 +54,7 @@ $pc-min: $sm + px;
     display: none !important;
   }
 }
+
 // PCのときのみタブメニューを表示する
 .v-tab {
   display: none;
