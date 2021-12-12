@@ -18,7 +18,7 @@ const routes = [
         redirect: 'home',
         meta: {
           title: {
-            ja: 'Portfolio | Home',
+            ja: 'ポートフォリオ | ホーム',
             en: 'Portfolio | Home'
           }
         }
@@ -28,7 +28,7 @@ const routes = [
         component: Home,
         meta: {
           title: {
-            ja: 'Portfolio | Home',
+            ja: 'ポートフォリオ | ホーム',
             en: 'Portfolio | Home'
           }
         }
@@ -38,7 +38,7 @@ const routes = [
         component: About,
         meta: {
           title: {
-            ja: 'Portfolio | About',
+            ja: 'ポートフォリオ | SØRAUについて',
             en: 'Portfolio | About'
           }
         }
@@ -48,7 +48,7 @@ const routes = [
         component: Skill,
         meta: {
           title: {
-            ja: 'Portfolio | Skill',
+            ja: 'ポートフォリオ | スキル',
             en: 'Portfolio | Skill'
           }
         }
@@ -58,11 +58,11 @@ const routes = [
         component: Blog,
         meta: {
           title: {
-            ja: 'Portfolio | Blog',
+            ja: 'ポートフォリオ | ブログ',
             en: 'Portfolio | Blog'
           }
         }
-      }
+      },
     ]
   },
   {
