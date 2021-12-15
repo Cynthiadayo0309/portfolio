@@ -4,6 +4,10 @@
 a {
   text-decoration: none;
 }
+
+.web {
+  margin-left: 5px;
+}
 </style>
 
 <template>
@@ -19,11 +23,12 @@ a {
         <v-tab><router-link to="skill">Skill</router-link></v-tab>
         <v-tab><router-link to="blog">Blog</router-link></v-tab>
         <v-tab>
+          <v-icon color="white">mdi-web</v-icon>
           <template v-if="$route.params.lang == 'ja'">
             <router-link :to="en">En</router-link>
           </template>
           <template v-if="$route.params.lang == 'en'">
-            <router-link :to="ja">Jp</router-link>
+            <router-link :to="ja">Ja</router-link>
           </template>
         </v-tab>
         <!-- 色々と追加する予定 -->
@@ -55,11 +60,12 @@ a {
           <v-list-item>
             <v-list-item-title>
               <template v-if="$route.params.lang == 'ja'">
-                <router-link :to="en">日本語</router-link>
+                <router-link :to="en">English</router-link>
               </template>
               <template v-if="$route.params.lang == 'en'">
-                <router-link :to="ja">English</router-link>
+                <router-link :to="ja">Japanese</router-link>
               </template>
+              <v-icon class="web" style="color: #009DAE;">mdi-web</v-icon>
             </v-list-item-title>
           </v-list-item>
           <!-- 色々と追加する予定 -->
