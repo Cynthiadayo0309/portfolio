@@ -15,20 +15,21 @@ a {
     <v-app-bar app color="#009DAE" class="logo">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title style="margin-left: 9%">
-        <router-link to="/">SØRAU</router-link>
+        <router-link to="/">URAHA'S PORTFOLIO</router-link>
       </v-toolbar-title>
       <v-tabs id="nav" color="#FFFFFF">
         <v-tab><router-link to="home">Home</router-link></v-tab>
         <v-tab><router-link to="about">About</router-link></v-tab>
+        <v-tab><router-link to="apps">Apps</router-link></v-tab>
         <v-tab><router-link to="skill">Skill</router-link></v-tab>
         <v-tab><router-link to="blog">Blog</router-link></v-tab>
         <v-tab>
           <v-icon color="white">mdi-web</v-icon>
           <template v-if="$route.params.lang == 'ja'">
-            <router-link :to="en">En</router-link>
+            <router-link :to="en">ja</router-link>
           </template>
           <template v-if="$route.params.lang == 'en'">
-            <router-link :to="ja">Ja</router-link>
+            <router-link :to="ja">en</router-link>
           </template>
         </v-tab>
         <!-- 色々と追加する予定 -->
@@ -49,6 +50,11 @@ a {
           </v-list-item>
           <v-list-item>
             <v-list-item-title>
+              <router-link to="apps">Apps</router-link>
+            </v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>
               <router-link to="skill">Skill</router-link>
             </v-list-item-title>
           </v-list-item>
@@ -60,10 +66,10 @@ a {
           <v-list-item>
             <v-list-item-title>
               <template v-if="$route.params.lang == 'ja'">
-                <router-link :to="en">English</router-link>
+                <router-link :to="en">日本語</router-link>
               </template>
               <template v-if="$route.params.lang == 'en'">
-                <router-link :to="ja">Japanese</router-link>
+                <router-link :to="ja">English</router-link>
               </template>
               <v-icon class="web" style="color: #009DAE;">mdi-web</v-icon>
             </v-list-item-title>

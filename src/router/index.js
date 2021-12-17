@@ -5,6 +5,7 @@ import Lang from '@/views/Lang.vue'
 import About from '@/views/About.vue'
 import Skill from '@/views/Skill.vue'
 import Blog from '@/views/Blog.vue'
+import Apps from '@/views/Apps.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,16 @@ const routes = [
           title: {
             ja: 'ポートフォリオ | SØRAUについて',
             en: 'Portfolio | About'
+          }
+        }
+      },
+      {
+        path: 'apps',
+        component: Apps,
+        meta: {
+          title: {
+            ja: 'ポートフォリオ | アプリケーション',
+            en: 'Portfolio | Apps'
           }
         }
       },

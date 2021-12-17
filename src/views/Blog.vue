@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" scoped>
 .blog {
   margin-top: 30px;
 }
@@ -29,7 +29,7 @@
                 ブログを書いています。
               </template>
               <template v-if="$route.params.lang == 'en'">
-                Write Blogs.
+                Blogs.
               </template>
             </v-card-subtitle>
           </div>

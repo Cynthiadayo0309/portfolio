@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" scoped>
 img {
   max-width: 100%;
   height: auto;
@@ -47,7 +47,12 @@ img {
               </v-img>
             </template>
             <span>{{ item.name }}<br/></span>
-            <span>{{ item.tip }}</span>
+            <template v-if="$route.params.lang == 'ja'">
+              <span>{{ item.tipJa }}</span>
+            </template>
+            <template v-if="$route.params.lang == 'en'">
+              <span>{{ item.tipEn }}</span>
+            </template>
           </v-tooltip>
         </v-flex>
       </v-layout>
@@ -64,72 +69,84 @@ export default {
           id: 1,
           src: require("../assets/vue.png"),
           name: 'Vue.js',
-          tip: '経験年数が入ります1'
+          tipJa: '経験年数が入ります1',
+          tipEn: 'keiken year1'
         },
         {
           id: 2,
           src: require("../assets/vuetify.png"),
           name: 'Vuetify',
-          tip: '経験年数が入ります2'
+          tipJa: '経験年数が入ります2',
+          tipEn: 'keiken year2'
         },{
           id: 3,
           src: require("../assets/javascript.png"),
           name: 'JavaScript',
-          tip: '経験年数が入ります3'
+          tipJa: '経験年数が入ります3',
+          tipEn: 'keiken year3'
         },
         {
           id: 4,
           src: require("../assets/php.png"),
           name: 'PHP',
-          tip: '経験年数が入ります4'
+          tipJa: '経験年数が入ります4',
+          tipEn: 'keiken year4'
         },
         {
           id: 5,
           src: require("../assets/ruby.png"),
           name: 'Ruby',
-          tip: '経験年数が入ります5'
+          tipJa: '経験年数が入ります5',
+          tipEn: 'keiken year5'
         },
         {
           id: 6,
           src: require("../assets/rails.png"),
           name: 'Rails',
-          tip: '経験年数が入ります6'
+          tipJa: '経験年数が入ります6',
+          tipEn: 'keiken year6'
         },
         {
           id: 7,
           src: require("../assets/github.png"),
           name: 'GitHub',
-          tip: '経験年数が入ります7'
+          tipJa: '経験年数が入ります7',
+          tipEn: 'keiken year7'
         },
         {
           id: 8,
           src: require("../assets/heroku.png"),
           name: 'Heroku',
-          tip: '経験年数が入ります8'
+          tipJa: '経験年数が入ります8',
+          tipEn: 'keiken year8'
         },
         {
           id: 9,
           src: require("../assets/firebase.png"),
           name: 'FireBase',
-          tip: '経験年数が入ります9'
+          tipJa: '経験年数が入ります9',
+          tipEn: 'keiken year9'
         },
         {
           id: 10,
           src: require("../assets/docker.png"),
           name: 'Docker',
-          tip: '経験年数が入ります10'
+          tipJa: '経験年数が入ります10',
+          tipEn: 'keiken year10'
         },
         {
           id: 11,
           src: require("../assets/photoshop.png"),
           name: 'PhotoShop',
-          tip: '経験年数が入ります11'
+          tipJa: '経験年数が入ります11',
+          tipEn: 'keiken year11'
         },
         {
           id: 12,
           src: require("../assets/adobe-illustrator.png"),
           name: 'Illustrator',
-          tip: '経験年数が入ります12'
+          tipJa: '経験年数が入ります12',
+          tipEn: 'keiken year12'
         },
       ]
     }
