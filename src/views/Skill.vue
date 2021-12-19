@@ -1,21 +1,14 @@
 <style lang="scss" scoped>
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.row {
-  margin: 20px 0 0 0;
-}
-
-.v-image {
-  margin: 0 auto 60px auto;
-}
+@import '@/styles/skill.scss';
 </style>
 
 <template>
   <v-main>
     <v-container>
+      <h1 class="text-center skill">
+        <template v-if="$route.params.lang == 'ja'">スキル</template>
+        <template v-if="$route.params.lang == 'en'">SKILL</template>
+      </h1>
       <v-layout row>
         <v-flex
           v-for="item in items"
@@ -78,7 +71,8 @@ export default {
           name: 'Vuetify',
           tipJa: '経験年数が入ります2',
           tipEn: 'keiken year2'
-        },{
+        },
+        {
           id: 3,
           src: require("../assets/javascript.png"),
           name: 'JavaScript',
