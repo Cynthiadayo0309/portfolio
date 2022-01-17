@@ -16,7 +16,7 @@ a {
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title style="margin-left: 4%">
         <v-avatar class="mr-4">
-          <v-img src="@/assets/ドラパルト.jpeg" />
+          <v-img src="@/assets/Squirrels_Closeup_Snow.jpeg" />
         </v-avatar>
         <router-link to="/">URAHA'S PORTFOLIO</router-link>
       </v-toolbar-title>

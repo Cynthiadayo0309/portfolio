@@ -20,7 +20,7 @@
                   size="230"
                   class="elevation-4 mt-n10 my-icon"
                 >
-                  <v-img src="@/assets/ドラパルト.jpeg" />
+                  <v-img src="@/assets/Squirrels_Closeup_Snow.jpeg" />
                 </v-avatar>
               </v-card-actions>
               <v-card-title primary-title>
@@ -45,7 +45,7 @@
                   <template v-if="$route.params.lang == 'en'">During the self-restraint period caused by the coronavirus in 2020, I decided to try something new. So I studied programming for myself, which I was interested in.</template>
                 </p>
                 <p class="text-center">
-                  <template v-if="$route.params.lang == 'ja'">2021年の6月から都内の会社（システム開発部）へアルバイトとして勤務中。</template>
+                  <template v-if="$route.params.lang == 'ja'">2021年の6月から都内の会社（システム開発部）にアルバイトとして勤務中。</template>
                   <template v-if="$route.params.lang == 'en'">I have been working part-time job at a company in Tokyo (System Development Department) since June of 2021.</template>
                 </p>
                 <v-container style="height: 100%; margin-top: 40px">
