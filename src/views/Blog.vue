@@ -2,6 +2,7 @@
 .blog {
   margin-top: 30px;
 }
+
 .note {
   display: flex;
   justify-content: center;
