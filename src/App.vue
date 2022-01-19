@@ -9,6 +9,7 @@
 
 <script>
 import Header from '@/components/Header.vue'
+
 export default {
   name: 'App',
   components: {
@@ -51,11 +52,6 @@ export default {
     $route(routeInstance, from) {
       this.createTitleDesc(routeInstance)
     },
-  },
-  computed: {
-    isHome() {
-      return this.$route.path.split('/').reverse()[0] == 'home'
-    },
-  },
+  }
 };
 </script>

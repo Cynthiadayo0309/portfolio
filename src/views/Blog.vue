@@ -1,11 +1,5 @@
 <style lang="scss" scoped>
-.blog {
-  margin-top: 30px;
-}
-.note {
-  display: flex;
-  justify-content: center;
-}
+@import '@/styles/blog.scss';
 </style>
 
 <template>
@@ -60,10 +54,9 @@
           <v-expand-transition>
             <div v-show="show">
               <v-divider></v-divider>
-
               <v-card-text>
                 <template v-if="$route.params.lang == 'ja'">
-                  主にVue.js・趣味について書いています。
+                  主にVue.jsで学んだこと・趣味について書いています。
                 </template>
                 <template v-if="$route.params.lang =='en'">
                   I mainly write about Vue.js and hobbies.

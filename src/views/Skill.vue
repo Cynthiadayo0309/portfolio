@@ -1,22 +1,21 @@
 <style lang="scss" scoped>
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.row {
-  margin: 20px 0 0 0;
-}
-
-.v-image {
-  margin: 0 auto 60px auto;
-}
+@import '@/styles/skill.scss';
 </style>
 
 <template>
   <v-main>
     <v-container>
-      <v-layout row>
+      <h1 class="text-center skill">
+        <template v-if="$route.params.lang == 'ja'">スキル</template>
+        <template v-if="$route.params.lang == 'en'">SKILLS</template>
+      </h1>
+      <div class="change-btn">
+        <v-btn @click="toggleBtn" color="success">
+          <template v-if="$route.params.lang == 'ja'">表示切り替え</template>
+          <template v-if="$route.params.lang == 'en'">display switching</template>
+        </v-btn>
+      </div>
+      <v-layout row v-if="toggle">
         <v-flex
           v-for="item in items"
           :key="item.id"
@@ -47,108 +46,104 @@ img {
               </v-img>
             </template>
             <span>{{ item.name }}<br/></span>
-            <template v-if="$route.params.lang == 'ja'">
-              <span>{{ item.tipJa }}</span>
-            </template>
-            <template v-if="$route.params.lang == 'en'">
-              <span>{{ item.tipEn }}</span>
-            </template>
+            <span>{{ item.tip }}</span>
           </v-tooltip>
         </v-flex>
       </v-layout>
+      <SkillsCharts v-else />
     </v-container>
   </v-main>
 </template>
 
 <script>
+import SkillsCharts from "@/components/SkillsCharts.vue"
+
 export default {
+  components: {
+    SkillsCharts,
+  },
   data() {
     return {
+      toggle: true,
       items: [
         {
           id: 1,
           src: require("../assets/vue.png"),
           name: 'Vue.js',
-          tipJa: '経験年数が入ります1',
-          tipEn: 'keiken year1'
+          tip: '30%'
         },
         {
           id: 2,
           src: require("../assets/vuetify.png"),
           name: 'Vuetify',
-          tipJa: '経験年数が入ります2',
-          tipEn: 'keiken year2'
-        },{
+          tip: '30%'
+        },
+        {
           id: 3,
           src: require("../assets/javascript.png"),
           name: 'JavaScript',
-          tipJa: '経験年数が入ります3',
-          tipEn: 'keiken year3'
+          tip: '40%'
         },
         {
           id: 4,
           src: require("../assets/php.png"),
           name: 'PHP',
-          tipJa: '経験年数が入ります4',
-          tipEn: 'keiken year4'
+          tip: '10%'
         },
         {
           id: 5,
           src: require("../assets/ruby.png"),
           name: 'Ruby',
-          tipJa: '経験年数が入ります5',
-          tipEn: 'keiken year5'
+          tip: '20%'
         },
         {
           id: 6,
           src: require("../assets/rails.png"),
           name: 'Rails',
-          tipJa: '経験年数が入ります6',
-          tipEn: 'keiken year6'
+          tip: '20%'
         },
         {
           id: 7,
           src: require("../assets/github.png"),
           name: 'GitHub',
-          tipJa: '経験年数が入ります7',
-          tipEn: 'keiken year7'
+          tip: '40%'
         },
         {
           id: 8,
           src: require("../assets/heroku.png"),
           name: 'Heroku',
-          tipJa: '経験年数が入ります8',
-          tipEn: 'keiken year8'
+          tip: '10%'
         },
         {
           id: 9,
           src: require("../assets/firebase.png"),
           name: 'FireBase',
-          tipJa: '経験年数が入ります9',
-          tipEn: 'keiken year9'
+          tip: '20%'
         },
         {
           id: 10,
           src: require("../assets/docker.png"),
           name: 'Docker',
-          tipJa: '経験年数が入ります10',
-          tipEn: 'keiken year10'
+          tip: '10%'
         },
         {
           id: 11,
           src: require("../assets/photoshop.png"),
           name: 'PhotoShop',
-          tipJa: '経験年数が入ります11',
-          tipEn: 'keiken year11'
+          tip: '40%'
         },
         {
           id: 12,
           src: require("../assets/adobe-illustrator.png"),
           name: 'Illustrator',
-          tipJa: '経験年数が入ります12',
-          tipEn: 'keiken year12'
+          tip: '30%'
         },
       ]
+    }
+  },
+  methods: {
+    toggleBtn: function() {
+      this.toggle == true ? this.toggle = false : this.toggle = true
     }
   }
 }
