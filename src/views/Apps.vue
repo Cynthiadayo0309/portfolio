@@ -84,7 +84,7 @@ export default {
         {
           id: 4,
           href: 'https://my-first-prodact.web.app/',
-          src: require("https://github.com/Cynthiadayo0309/portfolio/blob/main/src/assets/pokedex.jpeg?raw=true"),
+          src: require("../assets/pokedex.jpeg"),
           titleJa: 'ポケモン育成メモ・図鑑',
           titleEn: 'Pokedex & Note',
           subtitle: 'Application',
