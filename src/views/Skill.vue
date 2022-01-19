@@ -10,7 +10,7 @@
         <template v-if="$route.params.lang == 'en'">SKILLS</template>
       </h1>
       <div class="change-btn">
-        <v-btn @click="toggleBtn">
+        <v-btn @click="toggleBtn" color="success">
           <template v-if="$route.params.lang == 'ja'">表示切り替え</template>
           <template v-if="$route.params.lang == 'en'">display switching</template>
         </v-btn>

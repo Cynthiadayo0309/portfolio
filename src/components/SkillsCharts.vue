@@ -1,4 +1,10 @@
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media screen and (max-width: 767px) {
+  #chart {
+    margin-top: 30px;
+  }
+}
+</style>
 
 <template>
   <div id="chart">
@@ -24,7 +30,7 @@ export default {
       annotations: {
         points: [
           {
-            x: "Bananas",
+            x: "Vue.js",
             seriesIndex: 0,
             label: {
               borderColor: "#775DD0",
@@ -33,7 +39,7 @@ export default {
                 color: "#fff",
                 background: "#775DD0",
               },
-              text: "Bananas are good",
+              text: "Main Lang",
             },
           },
         ],

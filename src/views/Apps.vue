@@ -9,6 +9,10 @@
         <template v-if="$route.params.lang == 'ja'">手掛けたアプリケーション</template>
         <template v-if="$route.params.lang == 'en'">Applications</template>
       </h1>
+      <p class="text-center apps-font">
+        <template v-if="$route.params.lang == 'ja'">*チーム開発は主にフロントエンドを担当</template>
+        <template v-if="$route.params.lang == 'en'">Team development is mainly in charge of front-end.</template>
+      </p>
       <v-layout row>
         <v-flex
           v-for="item in items"
@@ -49,6 +53,26 @@ export default {
       items: [
         {
           id: 1,
+          href: '#',
+          src: require("../assets/home-bg.jpeg"),
+          titleJa: 'ポートフォリオ',
+          titleEn: 'Portfolio',
+          subtitle: 'Website',
+          textJa: 'Vue.js, Vuetifyで作ったポートフォリオ',
+          textEn: 'Portfolio created with Vue.js, Vuetify'
+        },
+        {
+          id: 2,
+          href: 'https://cynthiadayo.com/',
+          src: require("../assets/business.jpeg"),
+          titleJa: 'しあラボ',
+          titleEn: 'Thia Labo',
+          subtitle: 'Website',
+          textJa: 'WordPressで作った個人用ブログ',
+          textEn: 'A personal blog created with WordPress.'
+        },
+        {
+          id: 3,
           href: 'https://safe-anchorage-93849.herokuapp.com/',
           src: require("../assets/cafe.jpg"),
           titleJa: 'CTD CAFE',
@@ -58,7 +82,7 @@ export default {
           textEn: 'An imaginary cafe site made with Rails, Docker, Heroku, AWS(S3)'
         },
         {
-          id: 2,
+          id: 4,
           href: 'https://my-first-prodact.web.app/',
           src: require("../assets/pokedex.jpeg"),
           titleJa: 'ポケモン育成メモ・図鑑',
@@ -68,7 +92,7 @@ export default {
           textEn: 'A site using Vue-cli, Vuetify, Firebase, and PokeAPI'
         },
         {
-          id: 3,
+          id: 5,
           href: 'https://paradigmshift.io/index.html',
           src: require("../assets/Paradigm.svg"),
           titleJa: '株式会社パラダイムシフト',
@@ -78,7 +102,7 @@ export default {
           textEn: 'Created a migrated version of this Website to Vue.js.'
         },
         {
-          id: 4,
+          id: 6,
           href: 'https://repchecker.jp/',
           src: require("../assets/logo_repchecker.png"),
           titleJa: 'RepChecker',
@@ -88,7 +112,7 @@ export default {
           textEn: 'Created based on the designer’s design and added or modified the functions.'
         },
         {
-          id: 5,
+          id: 7,
           href: 'https://aiface.jp/',
           src: require("../assets/Aiface.svg"),
           titleJa: 'AiFace',
@@ -98,7 +122,7 @@ export default {
           textEn: 'Fixed the top page.'
         },
         {
-          id: 6,
+          id: 8,
           href: 'https://www.rc-booking.com/',
           src: require("../assets/logo_rc-booking.png"),
           titleJa: 'RcBooking',
