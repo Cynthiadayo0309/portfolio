@@ -114,7 +114,7 @@ export default {
         {
           id: 7,
           href: 'https://aiface.jp/',
-          src: require("https://github.com/Cynthiadayo0309/portfolio/tree/main/src/assets"),
+          src: require("../assets/Aiface.svg"),
           titleJa: 'AiFace',
           titleEn: 'AiFace',
           subtitle: 'Website',
