@@ -12,7 +12,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <v-img src="docs/img/business.833d7328.jpeg" max-height="500px"></v-img>
+            <v-img src="../assets/business.jpeg" max-height="500px"></v-img>
           </a>
           <div class="note">
             <v-icon color="teal lighten-2" max-width="10vw">
