@@ -20,7 +20,7 @@
                   size="230"
                   class="elevation-4 mt-n10 my-icon"
                 >
-                  <v-img src="https://github.com/Cynthiadayo0309/portfolio/blob/main/src/assets/Squirrels_Closeup_Snow.jpeg?raw=true" />
+                  <v-img src="@/assets/Squirrels_Closeup_Snow.jpeg" />
                 </v-avatar>
               </v-card-actions>
               <v-card-title primary-title>
