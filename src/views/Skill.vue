@@ -7,9 +7,15 @@
     <v-container>
       <h1 class="text-center skill">
         <template v-if="$route.params.lang == 'ja'">スキル</template>
-        <template v-if="$route.params.lang == 'en'">SKILL</template>
+        <template v-if="$route.params.lang == 'en'">SKILLS</template>
       </h1>
-      <v-layout row>
+      <div class="change-btn">
+        <v-btn @click="toggleBtn">
+          <template v-if="$route.params.lang == 'ja'">表示切り替え</template>
+          <template v-if="$route.params.lang == 'en'">display switching</template>
+        </v-btn>
+      </div>
+      <v-layout row v-if="toggle">
         <v-flex
           v-for="item in items"
           :key="item.id"
@@ -44,74 +50,81 @@
           </v-tooltip>
         </v-flex>
       </v-layout>
+      <SkillsCharts v-else />
     </v-container>
   </v-main>
 </template>
 
 <script>
+import SkillsCharts from "@/components/SkillsCharts.vue"
+
 export default {
+  components: {
+    SkillsCharts,
+  },
   data() {
     return {
+      toggle: true,
       items: [
         {
           id: 1,
           src: require("../assets/vue.png"),
           name: 'Vue.js',
-          tip: '40%'
+          tip: '30%'
         },
         {
           id: 2,
           src: require("../assets/vuetify.png"),
           name: 'Vuetify',
-          tip: '40%'
+          tip: '30%'
         },
         {
           id: 3,
           src: require("../assets/javascript.png"),
           name: 'JavaScript',
-          tip: '60%'
+          tip: '40%'
         },
         {
           id: 4,
           src: require("../assets/php.png"),
           name: 'PHP',
-          tip: '20%'
+          tip: '10%'
         },
         {
           id: 5,
           src: require("../assets/ruby.png"),
           name: 'Ruby',
-          tip: '40%'
+          tip: '20%'
         },
         {
           id: 6,
           src: require("../assets/rails.png"),
           name: 'Rails',
-          tip: '40%'
+          tip: '20%'
         },
         {
           id: 7,
           src: require("../assets/github.png"),
           name: 'GitHub',
-          tip: '60%'
+          tip: '40%'
         },
         {
           id: 8,
           src: require("../assets/heroku.png"),
           name: 'Heroku',
-          tip: '20%'
+          tip: '10%'
         },
         {
           id: 9,
           src: require("../assets/firebase.png"),
           name: 'FireBase',
-          tip: '30%'
+          tip: '20%'
         },
         {
           id: 10,
           src: require("../assets/docker.png"),
           name: 'Docker',
-          tip: '20%'
+          tip: '10%'
         },
         {
           id: 11,
@@ -126,6 +139,11 @@ export default {
           tip: '30%'
         },
       ]
+    }
+  },
+  methods: {
+    toggleBtn: function() {
+      this.toggle == true ? this.toggle = false : this.toggle = true
     }
   }
 }
