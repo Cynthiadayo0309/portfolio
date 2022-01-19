@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-@import "@/styles/header.scss";
+@import "@/styles/Header.scss";
 
 a {
   text-decoration: none;
