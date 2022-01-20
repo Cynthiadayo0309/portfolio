@@ -10,5 +10,6 @@ module.exports = {
   //   : '/'
   outputDir: 'docs',
   assetsDir: './',
-  publicPath: './',
+  publicPath: '/portfolio',
+  filenameHashing: false,
 }
