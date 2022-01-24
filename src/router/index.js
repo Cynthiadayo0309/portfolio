@@ -6,6 +6,7 @@ import About from '@/views/About.vue'
 import Skill from '@/views/Skill.vue'
 import Blog from '@/views/Blog.vue'
 import Apps from '@/views/Apps.vue'
+import Contact from '@/views/Contact.vue'
 
 Vue.use(VueRouter)
 
@@ -71,6 +72,16 @@ const routes = [
           title: {
             ja: 'ポートフォリオ | ブログ',
             en: 'Portfolio | Blog'
+          }
+        }
+      },
+      {
+        path: 'contact',
+        component: Contact,
+        meta: {
+          title: {
+            ja: 'ポートフォリオ | 連絡先',
+            en: 'Portfolio | Contact'
           }
         }
       },
