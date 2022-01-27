@@ -88,7 +88,7 @@ export default {
           id: 4,
           src: require("../assets/php.png"),
           name: 'PHP',
-          tip: '10%'
+          tip: '20%'
         },
         {
           id: 5,
@@ -112,7 +112,7 @@ export default {
           id: 8,
           src: require("../assets/heroku.png"),
           name: 'Heroku',
-          tip: '10%'
+          tip: '20%'
         },
         {
           id: 9,
@@ -124,7 +124,7 @@ export default {
           id: 10,
           src: require("../assets/docker.png"),
           name: 'Docker',
-          tip: '10%'
+          tip: '20%'
         },
         {
           id: 11,

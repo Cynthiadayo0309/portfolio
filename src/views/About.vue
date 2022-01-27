@@ -14,7 +14,6 @@
           <v-col xs="7" sm="10" md="11" lg="12" offset-xl="1">
             <v-card flat class="mt-10">
               <v-card-actions class="justify-center">
-                <!-- circular user profile pictures -->
                 <v-avatar
                   color="grey"
                   size="230"
@@ -26,8 +25,8 @@
               <v-card-title primary-title>
                 <div class="headline">
                   <span class="display-1 font-weight-bold mb-1">
-                    <template v-if="$route.params.lang == 'ja'">うらは</template>
-                    <template v-if="$route.params.lang == 'en'">URAHA</template>
+                    <template v-if="$route.params.lang == 'ja'">こうすけ</template>
+                    <template v-if="$route.params.lang == 'en'">Kosuke</template>
                   </span>
                   <div>
                     <template v-if="$route.params.lang == 'ja'">大学生 / プログラマー</template>
@@ -45,7 +44,7 @@
                   <template v-if="$route.params.lang == 'en'">During the self-restraint period caused by the coronavirus in 2020, I decided to try something new. So I studied programming for myself, which I was interested in.</template>
                 </p>
                 <p class="text-center">
-                  <template v-if="$route.params.lang == 'ja'">2021年の6月から都内の会社（システム開発部）にアルバイトとして勤務（リモートワーク）している。</template>
+                  <template v-if="$route.params.lang == 'ja'">2021年の6月から都内の会社（システム開発部）にアルバイトとして勤務している。</template>
                   <template v-if="$route.params.lang == 'en'">I have been working part-time job at a company in Tokyo (System Development Department) since June of 2021.</template>
                 </p>
                 <v-container style="height: 100%; margin-top: 40px">

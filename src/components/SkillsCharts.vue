@@ -23,7 +23,7 @@ export default {
     series: [
       {
         name: "Experience",
-        data: [30, 30, 40, 10, 20, 20, 40, 10, 20, 10, 40, 30,],
+        data: [30, 30, 40, 20, 20, 20, 40, 20, 20, 20, 40, 30,],
       },
     ],
     chartOptions: {

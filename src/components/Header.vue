@@ -18,7 +18,7 @@ a {
         <v-avatar class="mr-4">
           <v-img src="@/assets/Squirrels_Closeup_Snow.jpeg" />
         </v-avatar>
-        <router-link to="/">URAHA'S PORTFOLIO</router-link>
+        <router-link to="/">KOSUKE'S PORTFOLIO</router-link>
       </v-toolbar-title>
       <v-tabs id="nav" color="#FFFFFF">
         <v-tab><router-link to="home">Home</router-link></v-tab>
