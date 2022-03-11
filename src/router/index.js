@@ -40,7 +40,7 @@ const routes = [
         component: About,
         meta: {
           title: {
-            ja: 'ポートフォリオ | SØRAUについて',
+            ja: 'ポートフォリオ | 私について',
             en: 'Portfolio | About'
           }
         }

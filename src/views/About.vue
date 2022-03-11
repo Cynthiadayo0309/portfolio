@@ -47,6 +47,39 @@
                   <template v-if="$route.params.lang == 'ja'">2021年の6月から都内の会社（システム開発部）にアルバイトとして勤務している。</template>
                   <template v-if="$route.params.lang == 'en'">I have been working part-time job at a company in Tokyo (System Development Department) since June of 2021.</template>
                 </p>
+              </v-card-text>
+              <div class="px-2">
+                <v-card-title primary-title>
+                  <div class="headline">
+                    <div>
+                      簡単な活動経歴
+                    </div>
+                  </div>
+                </v-card-title>
+
+                <v-timeline class="px-2" :dense="dense">
+                  <v-timeline-item
+                    v-for="(item, i) in items"
+                    :key="i"
+                    :color="item.color"
+                    :icon="item.icon"
+                    fill-dot
+                    large
+                  >
+                    <v-card :color="item.color" dark>
+                      <v-card-title class="body-1">
+                        {{ item.title }}
+                      </v-card-title>
+                      <v-card-text class="white text--primary pt-4">
+                        <p class="white text--primary">
+                          {{ item.text }}
+                        </p>
+                      </v-card-text>
+                    </v-card>
+                  </v-timeline-item>
+                </v-timeline>
+              </div>
+              <v-card-text>
                 <v-container style="height: 100%; margin-top: 40px">
                   <v-row
                     align="center"
@@ -96,6 +129,46 @@
 
 <script>
 export default {
-  //
+  data() {
+    return {
+      items: [
+        {
+          color: "green lighten-1",
+          icon: "mdi-book-variant",
+          title: "2020年6月",
+          text: "ポケモン徹底攻略のような美しくて使いやすいサイトを自分でも作ってみたいと思い、プログラミングを始める",
+          bt_display: "display:none",
+        },
+        {
+          color: "red lighten-2",
+          icon: "mdi-book-variant",
+          title: "2020年7月〜11月",
+          text: "HTML, CSS, JavaScriptの基礎を学び、次にRuby, Ruby on Railsを始める",
+          bt_display: "display:none",
+        },
+        {
+          color: "purple lighten-2",
+          icon: "mdi-book-variant",
+          title: "2021年1月〜2月",
+          text: "Rails, Docker, Heroku, AWS(S3)でカフェサイトを製作し、エンジニア業界への就職を目指す",
+          bt_display: "display:none",
+        },
+        {
+          color: "blue lighten-2",
+          icon: "mdi-book-variant",
+          title: "2021年3月〜5月",
+          text: "Vue.jsにハマり、Vue.jsでポケモン図鑑を作る",
+          bt_display: "display:none",
+        },
+        {
+          color: "teal lighten-2",
+          icon: "mdi-book-variant",
+          title: "2021年6月〜現在",
+          text: "さらにスキルアップするために、実務未経験からアルバイトを始め、サービス作りや改修、テストを学ぶ",
+          bt_display: "display:none",
+        },
+      ],
+    }
+  }
 }
 </script>
