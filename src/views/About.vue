@@ -29,15 +29,15 @@
                     <template v-if="$route.params.lang == 'en'">Kosuke</template>
                   </span>
                   <div>
-                    <template v-if="$route.params.lang == 'ja'">大学生 / プログラマー</template>
+                    <template v-if="$route.params.lang == 'ja'">ITエンジニア</template>
                     <template v-if="$route.params.lang == 'en'">Student / Programmer</template>
                   </div>
                 </div>
               </v-card-title>
               <v-card-text>
                 <p class="text-center">
-                  <template v-if="$route.params.lang == 'ja'">趣味：ポケモン・欧州サッカー・ゲーム・漫画・プログラミング</template>
-                  <template v-if="$route.params.lang == 'en'">Hobbies: Pokémon, watching European soccer, games, manga, programming</template>
+                  <template v-if="$route.params.lang == 'ja'">趣味：散歩・サッカー観戦・漫画・競馬</template>
+                  <template v-if="$route.params.lang == 'en'">Hobbies: walk, watching football, manga, horse racing</template>
                 </p>
                 <p class="text-center">
                   <template v-if="$route.params.lang == 'ja'">2020年の新型コロナウイルスによる自粛期間中、新しいことに挑戦しようと思った。そこで、興味があったプログラミングを独学で学んだ。</template>
