@@ -20,10 +20,10 @@
             </v-icon>
             <v-card-subtitle>
               <template v-if="$route.params.lang == 'ja'">
-                ブログを書いています。
+                ブログを書いています。(現在休止中)
               </template>
               <template v-if="$route.params.lang == 'en'">
-                Blogs.
+                Blogs. (Currently on hiatus)
               </template>
             </v-card-subtitle>
           </div>

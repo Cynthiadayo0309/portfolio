@@ -75,16 +75,16 @@ const routes = [
           }
         }
       },
-      {
-        path: 'contact',
-        component: Contact,
-        meta: {
-          title: {
-            ja: 'ポートフォリオ | 連絡先',
-            en: 'Portfolio | Contact'
-          }
-        }
-      },
+      // {
+      //   path: 'contact',
+      //   component: Contact,
+      //   meta: {
+      //     title: {
+      //       ja: 'ポートフォリオ | 連絡先',
+      //       en: 'Portfolio | Contact'
+      //     }
+      //   }
+      // },
     ]
   },
   {

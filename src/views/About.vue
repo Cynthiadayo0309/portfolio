@@ -25,12 +25,12 @@
               <v-card-title primary-title>
                 <div class="headline">
                   <span class="display-1 font-weight-bold mb-1">
-                    <template v-if="$route.params.lang == 'ja'">こうすけ</template>
-                    <template v-if="$route.params.lang == 'en'">Kosuke</template>
+                    <template v-if="$route.params.lang == 'ja'">青木孝輔</template>
+                    <template v-if="$route.params.lang == 'en'">Kosuke Aoki</template>
                   </span>
                   <div>
-                    <template v-if="$route.params.lang == 'ja'">ITエンジニア</template>
-                    <template v-if="$route.params.lang == 'en'">Student / Programmer</template>
+                    <template v-if="$route.params.lang == 'ja'">エンジニア</template>
+                    <template v-if="$route.params.lang == 'en'">Programmer</template>
                   </div>
                 </div>
               </v-card-title>
@@ -39,14 +39,14 @@
                   <template v-if="$route.params.lang == 'ja'">趣味：散歩・サッカー観戦・漫画・競馬</template>
                   <template v-if="$route.params.lang == 'en'">Hobbies: walk, watching football, manga, horse racing</template>
                 </p>
-                <p class="text-center">
+                <!-- <p class="text-center">
                   <template v-if="$route.params.lang == 'ja'">2020年の新型コロナウイルスによる自粛期間中、新しいことに挑戦しようと思った。そこで、興味があったプログラミングを独学で学んだ。</template>
                   <template v-if="$route.params.lang == 'en'">During the self-restraint period caused by the coronavirus in 2020, I decided to try something new. So I studied programming for myself, which I was interested in.</template>
                 </p>
                 <p class="text-center">
                   <template v-if="$route.params.lang == 'ja'">2021年の6月から都内の会社（システム開発部）にアルバイトとして勤務している。</template>
                   <template v-if="$route.params.lang == 'en'">I have been working part-time job at a company in Tokyo (System Development Department) since June of 2021.</template>
-                </p>
+                </p> -->
               </v-card-text>
               <div class="px-2">
                 <v-card-title primary-title>
@@ -96,7 +96,7 @@
                       </template>
                       <span>GitHub</span>
                     </v-tooltip>
-                    <v-tooltip bottom>
+                    <!-- <v-tooltip bottom>
                       <template v-slot:activator="{ on, attrs }">
                         <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Cynthia_labo">
                           <v-icon color="blue lighten-3" size="70px" v-bind="attrs" v-on="on">
@@ -115,7 +115,7 @@
                         </a>
                       </template>
                       <span>Blog</span>
-                    </v-tooltip>
+                    </v-tooltip> -->
                   </v-row>
                 </v-container>
               </v-card-text>
@@ -163,8 +163,8 @@ export default {
         {
           color: "teal lighten-2",
           icon: "mdi-book-variant",
-          title: "2021年6月〜現在",
-          text: "さらにスキルアップするために、実務未経験からアルバイトを始め、サービス作りや改修、テストを学ぶ",
+          title: "2021年6月〜2022年12月",
+          text: "アルバイトを始め、サービス開発や改修、テストを学ぶ",
           bt_display: "display:none",
         },
       ],

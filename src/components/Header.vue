@@ -26,7 +26,7 @@ a {
         <v-tab><router-link to="apps">Apps</router-link></v-tab>
         <v-tab><router-link to="skill">Skill</router-link></v-tab>
         <v-tab><router-link to="blog">Blog</router-link></v-tab>
-        <v-tab><router-link to="contact">Contact</router-link></v-tab>
+        <!-- <v-tab><router-link to="contact">Contact</router-link></v-tab> -->
         <v-tab>
           <v-icon color="white">mdi-web</v-icon>
           <template v-if="$route.params.lang == 'ja'">
