@@ -10,6 +10,12 @@ module.exports = {
   //   : '/'
   outputDir: 'docs',
   assetsDir: './',
-  publicPath: '/portfolio',
+  publicPath: '/portfolio/',
   filenameHashing: false,
+  productionSourceMap: false,
+  devServer: {
+    historyApiFallback: {
+      index: '/portfolio/index.html',
+    },
+  },
 }

@@ -29,14 +29,18 @@ $pc-min: $sm + px;
   display: flex;
   justify-content: right;
 
-  a {
+  .v-tab {
     font-weight: bold;
     color: white;
     padding: 0 10px;
   }
+
+  .v-tab--active {
+    color: #ffffff;
+  }
 }
 
-.drawer a {
+.drawer .v-list-item__title {
   color: #009DAE;
 }
 

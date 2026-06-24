@@ -1,10 +1,6 @@
 <style lang="scss" scoped>
 @import "@/styles/Header.scss";
 
-a {
-  text-decoration: none;
-}
-
 .web {
   margin-left: 5px;
 }
@@ -16,74 +12,44 @@ a {
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title style="margin-left: 4%">
         <v-avatar class="mr-4">
-          <v-img src="@/assets/Squirrels_Closeup_Snow.jpeg" />
+          <v-img src="@/assets/Squirrels_Closeup_Snow.jpeg" alt="Kosuke Aoki portfolio avatar" />
         </v-avatar>
-        <router-link to="/">KOSUKE'S PORTFOLIO</router-link>
+        <router-link :to="localizedPath('home')">KOSUKE'S PORTFOLIO</router-link>
       </v-toolbar-title>
+
       <v-tabs id="nav" color="#FFFFFF">
-        <v-tab><router-link to="home">Home</router-link></v-tab>
-        <v-tab><router-link to="about">About</router-link></v-tab>
-        <v-tab><router-link to="apps">Apps</router-link></v-tab>
-        <v-tab><router-link to="skill">Skill</router-link></v-tab>
-        <v-tab><router-link to="blog">Blog</router-link></v-tab>
-        <!-- <v-tab><router-link to="contact">Contact</router-link></v-tab> -->
-        <v-tab>
+        <v-tab :to="localizedPath('home')" exact>Home</v-tab>
+        <v-tab :to="localizedPath('about')" exact>About</v-tab>
+        <v-tab :to="localizedPath('works')" exact>Works</v-tab>
+        <v-tab :to="localizedPath('skill')" exact>Skill</v-tab>
+        <v-tab :to="switchLanguagePath" :aria-label="languageAriaLabel" exact>
           <v-icon color="white">mdi-web</v-icon>
-          <template v-if="$route.params.lang == 'ja'">
-            <router-link :to="en">ja</router-link>
-          </template>
-          <template v-if="$route.params.lang == 'en'">
-            <router-link :to="ja">en</router-link>
-          </template>
+          <span>{{ languageTabLabel }}</span>
         </v-tab>
-        <!-- 色々と追加する予定 -->
       </v-tabs>
     </v-app-bar>
+
     <v-navigation-drawer class="drawer" v-model="drawer" fixed temporary>
       <v-list nav>
         <v-list-item-group>
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="home">Home</router-link>
-            </v-list-item-title>
+          <v-list-item :to="localizedPath('home')" exact @click="drawer = false">
+            <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="about">About</router-link>
-            </v-list-item-title>
+          <v-list-item :to="localizedPath('about')" exact @click="drawer = false">
+            <v-list-item-title>About</v-list-item-title>
           </v-list-item>
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="apps">Apps</router-link>
-            </v-list-item-title>
+          <v-list-item :to="localizedPath('works')" exact @click="drawer = false">
+            <v-list-item-title>Works</v-list-item-title>
           </v-list-item>
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="skill">Skill</router-link>
-            </v-list-item-title>
+          <v-list-item :to="localizedPath('skill')" exact @click="drawer = false">
+            <v-list-item-title>Skill</v-list-item-title>
           </v-list-item>
-          <v-list-item>
+          <v-list-item :to="switchLanguagePath" exact @click="drawer = false">
             <v-list-item-title>
-              <router-link to="blog">Blog</router-link>
-            </v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>
-              <router-link to="contact">Contact</router-link>
-            </v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>
-              <template v-if="$route.params.lang == 'ja'">
-                <router-link :to="en">日本語</router-link>
-              </template>
-              <template v-if="$route.params.lang == 'en'">
-                <router-link :to="ja">English</router-link>
-              </template>
+              {{ drawerLanguageLabel }}
               <v-icon class="web" style="color: #009DAE;">mdi-web</v-icon>
             </v-list-item-title>
           </v-list-item>
-          <!-- 色々と追加する予定 -->
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -98,15 +64,27 @@ export default {
     };
   },
   computed: {
-    ja() {
-      let pathArray = this.$route.path.split('/')
-      pathArray[1] = 'ja'
+    currentLang() {
+      return this.$route.params.lang === 'en' ? 'en' : 'ja'
+    },
+    languageTabLabel() {
+      return this.currentLang === 'ja' ? 'EN' : 'JA'
+    },
+    languageAriaLabel() {
+      return this.currentLang === 'ja' ? 'Switch language to English' : '日本語に切り替え'
+    },
+    drawerLanguageLabel() {
+      return this.currentLang === 'ja' ? 'English' : '日本語'
+    },
+    switchLanguagePath() {
+      const pathArray = this.$route.path.split('/')
+      pathArray[1] = this.currentLang === 'ja' ? 'en' : 'ja'
       return pathArray.join('/')
     },
-    en() {
-      let path = this.$route.path.split('/')
-      path[1] = 'en'
-      return path.join('/')
+  },
+  methods: {
+    localizedPath(page) {
+      return `/${this.currentLang}/${page}`
     },
   },
 };
