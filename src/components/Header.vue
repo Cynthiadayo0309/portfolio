@@ -18,10 +18,9 @@
       </v-toolbar-title>
 
       <v-tabs id="nav" color="#FFFFFF">
-        <v-tab :to="localizedPath('home')" exact>Home</v-tab>
-        <v-tab :to="localizedPath('about')" exact>About</v-tab>
-        <v-tab :to="localizedPath('works')" exact>Works</v-tab>
-        <v-tab :to="localizedPath('skill')" exact>Skill</v-tab>
+        <v-tab v-for="item in navItems" :key="item.page" :to="localizedPath(item.page)" exact>
+          {{ item.label }}
+        </v-tab>
         <v-tab :to="switchLanguagePath" :aria-label="languageAriaLabel" exact>
           <v-icon color="white">mdi-web</v-icon>
           <span>{{ languageTabLabel }}</span>
@@ -32,17 +31,14 @@
     <v-navigation-drawer class="drawer" v-model="drawer" fixed temporary>
       <v-list nav>
         <v-list-item-group>
-          <v-list-item :to="localizedPath('home')" exact @click="drawer = false">
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item>
-          <v-list-item :to="localizedPath('about')" exact @click="drawer = false">
-            <v-list-item-title>About</v-list-item-title>
-          </v-list-item>
-          <v-list-item :to="localizedPath('works')" exact @click="drawer = false">
-            <v-list-item-title>Works</v-list-item-title>
-          </v-list-item>
-          <v-list-item :to="localizedPath('skill')" exact @click="drawer = false">
-            <v-list-item-title>Skill</v-list-item-title>
+          <v-list-item
+            v-for="item in navItems"
+            :key="item.page"
+            :to="localizedPath(item.page)"
+            exact
+            @click="drawer = false"
+          >
+            <v-list-item-title>{{ item.label }}</v-list-item-title>
           </v-list-item>
           <v-list-item :to="switchLanguagePath" exact @click="drawer = false">
             <v-list-item-title>
@@ -72,6 +68,28 @@ export default {
     },
     languageAriaLabel() {
       return this.currentLang === 'ja' ? 'Switch language to English' : '日本語に切り替え'
+    },
+    navItems() {
+      const labels = this.currentLang === 'ja'
+        ? {
+          home: 'ホーム',
+          about: '私について',
+          works: '実績',
+          skill: 'スキル',
+        }
+        : {
+          home: 'Home',
+          about: 'About',
+          works: 'Works',
+          skill: 'Skill',
+        }
+
+      return [
+        { page: 'home', label: labels.home },
+        { page: 'about', label: labels.about },
+        { page: 'works', label: labels.works },
+        { page: 'skill', label: labels.skill },
+      ]
     },
     drawerLanguageLabel() {
       return this.currentLang === 'ja' ? 'English' : '日本語'
