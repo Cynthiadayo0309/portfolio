@@ -8,14 +8,14 @@ module.exports = {
   // publicPath: process.env.NODE_ENV === 'production'
   //   ? '/portfolio-app/'   //任意
   //   : '/'
-  outputDir: 'docs',
+  outputDir: 'dist',
   assetsDir: './',
-  publicPath: '/portfolio/',
+  publicPath: '/',
   filenameHashing: false,
   productionSourceMap: false,
   devServer: {
     historyApiFallback: {
-      index: '/portfolio/index.html',
+      index: '/index.html',
     },
   },
 }
