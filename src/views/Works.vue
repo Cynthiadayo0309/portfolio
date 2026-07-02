@@ -79,6 +79,20 @@
 <script>
 const worksJa = [
   {
+    title: 'Difyを活用したRPAワークフロー構築',
+    period: '2026年 - 現在',
+    role: 'RPA開発 / 業務自動化',
+    icon: 'mdi-robot-outline',
+    summary:
+      'Difyを活用し、帳票分析、サマリ作成、メール配信までをつなぐRPAワークフローの構築に取り組んでいます。',
+    actions: [
+      '帳票データを読み取り、必要な情報を抽出・整理する分析フローを設計',
+      '分析結果をもとに、確認しやすいサマリを自動生成するワークフローを構築',
+      '生成したサマリを関係者へメール配信する一連の業務自動化を実装',
+    ],
+    tech: ['Dify', 'RPA', '帳票分析', 'サマリ作成', 'メール配信', '業務自動化'],
+  },
+  {
     title: '生成AI・LLMを活用したデータ分析アプリケーション開発',
     period: '2026年 - 現在',
     role: 'アプリケーション開発 / データ分析支援',
@@ -143,6 +157,20 @@ const worksJa = [
 ]
 
 const worksEn = [
+  {
+    title: 'RPA Workflow Development with Dify',
+    period: '2026 - Present',
+    role: 'RPA Development / Business Automation',
+    icon: 'mdi-robot-outline',
+    summary:
+      'Building RPA workflows with Dify that connect form analysis, summary generation, and email delivery.',
+    actions: [
+      'Designed analysis flows that read form data and organize key information',
+      'Built workflows that automatically generate easy-to-review summaries from analysis results',
+      'Implemented automation that sends generated summaries to relevant stakeholders by email',
+    ],
+    tech: ['Dify', 'RPA', 'Form Analysis', 'Summary Generation', 'Email Delivery', 'Business Automation'],
+  },
   {
     title: 'Data Analysis Application Using Generative AI and LLMs',
     period: '2026 - Present',
