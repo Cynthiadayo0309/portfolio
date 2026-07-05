@@ -41,6 +41,24 @@
         </div>
       </section>
 
+      <section class="about-hobbies">
+        <p class="section-label">{{ content.hobbiesLabel }}</p>
+        <h2>{{ content.hobbiesTitle }}</h2>
+        <div class="hobby-list">
+          <article
+            v-for="hobby in content.hobbies"
+            :key="hobby.title"
+            class="hobby-item"
+          >
+            <v-icon color="#0f8c9b" size="28">{{ hobby.icon }}</v-icon>
+            <div>
+              <h3>{{ hobby.title }}</h3>
+              <p>{{ hobby.text }}</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="career-section">
         <p class="section-label">{{ content.careerLabel }}</p>
         <h2>{{ content.careerTitle }}</h2>
@@ -52,7 +70,7 @@
           >
             <div class="career-period">
               <span>{{ item.period }}</span>
-              <small>{{ item.duration }}</small>
+              <small v-if="item.duration">{{ item.duration }}</small>
             </div>
             <div class="career-marker" :class="item.kind">
               <v-icon color="white" size="22">{{ item.icon }}</v-icon>
@@ -109,7 +127,6 @@
 const careerJa = [
   {
     period: '2026年5月 - 現在',
-    duration: '1ヶ月',
     title: 'データ分析系IT企業',
     role: 'データ分析アプリケーション開発',
     icon: 'mdi-chart-line',
@@ -177,7 +194,6 @@ const careerJa = [
 const careerEn = [
   {
     period: 'May 2026 - Present',
-    duration: '1 month',
     title: 'Data Analysis Technology Company',
     role: 'Data Analysis Application Development',
     icon: 'mdi-chart-line',
@@ -263,6 +279,13 @@ export default {
             { label: 'Experience', value: 'App Dev / Infrastructure / ISMS' },
             { label: 'Background', value: 'Psychology / Statistics / Languages' },
           ],
+          hobbiesLabel: 'Hobbies',
+          hobbiesTitle: 'What I enjoy outside work',
+          hobbies: [
+            { title: 'Horse Racing', text: 'Watching races and following the stories behind each event.', icon: 'mdi-horse' },
+            { title: 'Games', text: 'Pokemon, Dragon Quest, and FPS games.', icon: 'mdi-gamepad-variant-outline' },
+            { title: 'Cooking', text: 'Trying recipes and making everyday meals a little better.', icon: 'mdi-silverware-fork-knife' },
+          ],
           careerLabel: 'Career',
           careerTitle: 'Experience and Education',
           currentLabel: 'Current',
@@ -288,6 +311,13 @@ export default {
           { label: '現在', value: 'データ分析系IT企業' },
           { label: '経験領域', value: 'アプリ開発 / インフラ / ISMS' },
           { label: '学習背景', value: '心理学 / 統計 / 語学' },
+        ],
+        hobbiesLabel: 'Hobbies',
+        hobbiesTitle: '仕事以外で好きなこと',
+        hobbies: [
+          { title: '競馬観戦', text: 'レース展開や背景にあるストーリーを楽しみながら観戦しています。', icon: 'mdi-horse' },
+          { title: 'ゲーム', text: 'ポケモン、ドラクエ、FPSなどをプレイしています。', icon: 'mdi-gamepad-variant-outline' },
+          { title: '料理', text: '日々の食事を少し楽しくする料理づくりが好きです。', icon: 'mdi-silverware-fork-knife' },
         ],
         careerLabel: 'Career',
         careerTitle: '職歴・学歴',
