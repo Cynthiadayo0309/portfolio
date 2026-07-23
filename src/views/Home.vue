@@ -64,7 +64,7 @@ export default {
       if (this.currentLang === 'en') {
         return {
           eyebrow: 'Portfolio',
-          title: 'Data, infrastructure, and operations turned into practical systems.',
+          title: 'Kosuke Aoki Portfolio',
           lead:
             'I build and improve systems across data analysis applications, cloud infrastructure, CI/CD, operations, and information security.',
           tags: ['Data Analysis', 'Cloud Infrastructure', 'Operations Improvement', 'Generative AI / LLM'],
@@ -96,7 +96,7 @@ export default {
 
       return {
         eyebrow: 'Portfolio',
-        title: 'データ、インフラ、運用改善を実用的な仕組みに落とし込む',
+        title: '青木孝輔のポートフォリオ',
         lead:
           'データ分析アプリケーション、クラウドインフラ、CI/CD、運用改善、情報セキュリティまで、事業の文脈に合わせて開発・改善に取り組んでいます。',
         tags: ['データ分析', 'クラウドインフラ', '運用改善', '生成AI / LLM'],
