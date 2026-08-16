@@ -63,64 +63,64 @@ export default {
     content() {
       if (this.currentLang === 'en') {
         return {
-          eyebrow: 'Portfolio',
-          title: 'Kosuke Aoki Portfolio',
+          eyebrow: 'Kosuke Aoki',
+          title: 'Building systems that keep working',
           lead:
-            'I build and improve systems across data analysis applications, cloud infrastructure, CI/CD, operations, and information security.',
-          tags: ['Data Analysis', 'Cloud Infrastructure', 'Operations Improvement', 'Generative AI / LLM'],
+            'I work across application development, cloud infrastructure, CI/CD, generative AI, and information security to build systems that stay useful in real operations.',
+          tags: ['Application Development', 'Cloud Operations', 'DevOps', 'Generative AI / LLM'],
           primaryCta: 'View Works',
           secondaryCta: 'About Me',
           visualLabel: 'Current Focus',
-          visualTitle: 'AI-assisted data analysis',
+          visualTitle: 'Application development with AI',
           visualText:
-            'Building applications that connect business context, analysis results, and next actions.',
+            'Building practical applications that combine implementation, operations, and AI-assisted workflows.',
           focus: [
             {
-              icon: 'mdi-brain',
-              title: 'Data and AI',
-              text: 'Developing data analysis applications that use generative AI and LLMs to support insights and actions.',
+              icon: 'mdi-code-braces',
+              title: 'Application Development',
+              text: 'Building web applications with frontend, backend, API integration, data handling, and generative AI features.',
             },
             {
               icon: 'mdi-server-network',
-              title: 'Infrastructure',
-              text: 'Designing, operating, and improving cloud infrastructure where stability and repeatability matter.',
+              title: 'Cloud and Operations',
+              text: 'Designing, operating, and improving cloud environments where stability, repeatability, and maintenance matter.',
             },
             {
-              icon: 'mdi-source-branch',
-              title: 'Delivery',
-              text: 'Supporting CI/CD, source code management, task coordination, and team operations.',
+              icon: 'mdi-robot-outline',
+              title: 'AI and Workflow Support',
+              text: 'Using generative AI and LLMs to support research, analysis, documentation, automation, and day-to-day work.',
             },
           ],
         }
       }
 
       return {
-        eyebrow: 'Portfolio',
-        title: '青木孝輔のポートフォリオ',
+        eyebrow: 'Kosuke Aoki',
+        title: '使われ続ける仕組みをつくる',
         lead:
-          'データ分析アプリケーション、クラウドインフラ、CI/CD、運用改善、情報セキュリティまで、事業の文脈に合わせて開発・改善に取り組んでいます。',
-        tags: ['データ分析', 'クラウドインフラ', '運用改善', '生成AI / LLM'],
+          'アプリケーション開発、クラウドインフラ、CI/CD、生成AI活用、情報セキュリティまで。開発と運用の両面から、現場に根づくシステムづくりに取り組んでいます。',
+        tags: ['アプリケーション開発', 'クラウド運用', 'DevOps', '生成AI / LLM'],
         primaryCta: '実績を見る',
         secondaryCta: 'プロフィール',
         visualLabel: 'Current Focus',
-        visualTitle: 'AIを活用したデータ分析支援',
+        visualTitle: 'AIを活用したアプリケーション開発',
         visualText:
-          '業務課題、分析結果、次のアクションをつなぐアプリケーション開発に取り組んでいます。',
+          '実装、運用、業務支援をつなぐ実用的なアプリケーションづくりに取り組んでいます。',
         focus: [
           {
-            icon: 'mdi-brain',
-            title: 'データ・AI',
-            text: '生成AI・LLMを活用し、インサイトや改善アクションにつながるデータ分析アプリケーションを開発しています。',
+            icon: 'mdi-code-braces',
+            title: 'アプリケーション開発',
+            text: '業務画面、API連携、データ活用、生成AI連携など、目的に合わせたWebアプリケーションを実装します。',
           },
           {
             icon: 'mdi-server-network',
-            title: 'インフラ',
-            text: '安定性と再現性が求められるクラウド基盤の設計、構築、運用、改善を経験しています。',
+            title: 'クラウド・運用改善',
+            text: 'AWS、GCS、CI/CD、監視、障害対応など、安定運用を支える基盤づくりを経験しています。',
           },
           {
-            icon: 'mdi-source-branch',
-            title: '開発・運用推進',
-            text: 'CI/CD、ソースコード管理、タスク調整、障害対応フロー整備など、チームで使い続けられる仕組みづくりを支援します。',
+            icon: 'mdi-robot-outline',
+            title: 'AI・業務支援',
+            text: '生成AIやLLMを活用し、調査、分析、資料整理、業務自動化を支援する仕組みを形にします。',
           },
         ],
       }

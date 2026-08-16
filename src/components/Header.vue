@@ -14,7 +14,7 @@
         <v-avatar class="mr-4">
           <v-img src="@/assets/Squirrels_Closeup_Snow.jpeg" alt="Kosuke Aoki portfolio avatar" />
         </v-avatar>
-        <router-link :to="localizedPath('home')">KOSUKE'S PORTFOLIO</router-link>
+        <router-link :to="localizedPath('home')">Kosuke Aoki</router-link>
       </v-toolbar-title>
 
       <v-tabs id="nav" color="#FFFFFF">

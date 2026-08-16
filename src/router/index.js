@@ -22,8 +22,8 @@ const routes = [
             en: 'Portfolio | Home'
           },
           desc: {
-            ja: '青木孝輔のポートフォリオ。データ分析アプリケーション、クラウドインフラ、運用改善、生成AI活用の経験を紹介します。',
-            en: 'Kosuke Aoki portfolio showcasing experience in data analysis applications, cloud infrastructure, operations improvement, and generative AI.'
+            ja: '青木孝輔のポートフォリオ。アプリケーション開発、クラウドインフラ、DevOps、生成AI活用、情報セキュリティの経験を紹介します。',
+            en: 'Kosuke Aoki portfolio showcasing experience in application development, cloud infrastructure, DevOps, generative AI, and information security.'
           },
         }
       },
@@ -36,8 +36,8 @@ const routes = [
             en: 'Portfolio | Home'
           },
           desc: {
-            ja: '青木孝輔のポートフォリオ。データ分析アプリケーション、クラウドインフラ、運用改善、生成AI活用の経験を紹介します。',
-            en: 'Kosuke Aoki portfolio showcasing experience in data analysis applications, cloud infrastructure, operations improvement, and generative AI.'
+            ja: '青木孝輔のポートフォリオ。アプリケーション開発、クラウドインフラ、DevOps、生成AI活用、情報セキュリティの経験を紹介します。',
+            en: 'Kosuke Aoki portfolio showcasing experience in application development, cloud infrastructure, DevOps, generative AI, and information security.'
           },
         }
       },
