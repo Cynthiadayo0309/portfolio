@@ -11,6 +11,83 @@
         <p>{{ content.lead }}</p>
       </section>
 
+      <section class="care-case-study" :aria-labelledby="'care-case-study-title-' + currentLang">
+        <header class="care-case-study__header">
+          <p class="section-label">{{ content.careCaseStudy.eyebrow }}</p>
+          <h2 :id="'care-case-study-title-' + currentLang">{{ content.careCaseStudy.title }}</h2>
+          <p>{{ content.careCaseStudy.lead }}</p>
+        </header>
+
+        <section class="care-adoption" :aria-labelledby="'care-adoption-title-' + currentLang">
+          <v-icon color="#0f8c9b" size="32">mdi-account-group-outline</v-icon>
+          <div>
+            <h3 :id="'care-adoption-title-' + currentLang">{{ content.careCaseStudy.adoptionTitle }}</h3>
+            <p v-for="text in content.careCaseStudy.adoptionText" :key="text">{{ text }}</p>
+          </div>
+        </section>
+
+        <section class="care-apps" :aria-labelledby="'care-apps-title-' + currentLang">
+          <div class="care-section-heading">
+            <p class="section-label">{{ content.careCaseStudy.appsEyebrow }}</p>
+            <h3 :id="'care-apps-title-' + currentLang">{{ content.careCaseStudy.appsTitle }}</h3>
+          </div>
+
+          <div class="care-apps__grid">
+            <article v-for="app in content.careCaseStudy.apps" :key="app.title" class="care-app-card">
+              <div class="care-app-card__heading">
+                <v-icon color="#0f8c9b" size="30">{{ app.icon }}</v-icon>
+                <div>
+                  <h4>{{ app.title }}</h4>
+                  <p>{{ app.summary }}</p>
+                </div>
+              </div>
+
+              <div class="care-app-card__block">
+                <h5>{{ content.careCaseStudy.challengeLabel }}</h5>
+                <p>{{ app.challenge }}</p>
+              </div>
+              <div class="care-app-card__block">
+                <h5>{{ content.careCaseStudy.solutionLabel }}</h5>
+                <p>{{ app.solution }}</p>
+              </div>
+              <div class="care-app-card__block">
+                <h5>{{ content.careCaseStudy.featuresLabel }}</h5>
+                <ul>
+                  <li v-for="feature in app.features" :key="feature">{{ feature }}</li>
+                </ul>
+              </div>
+
+              <a
+                class="care-app-card__repository"
+                :href="app.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ content.careCaseStudy.repositoryLabel }}
+                <v-icon size="17">mdi-open-in-new</v-icon>
+              </a>
+
+              <div class="work-tags care-app-card__tags" :aria-label="content.careCaseStudy.techLabel">
+                <span v-for="tech in app.tech" :key="tech">{{ tech }}</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="care-flow-section" :aria-labelledby="'care-flow-title-' + currentLang">
+          <div class="care-section-heading">
+            <p class="section-label">{{ content.careCaseStudy.flowEyebrow }}</p>
+            <h3 :id="'care-flow-title-' + currentLang">{{ content.careCaseStudy.flowTitle }}</h3>
+          </div>
+          <div class="care-flow">
+            <article v-for="(step, index) in content.careCaseStudy.flow" :key="step" class="care-flow__step">
+              <span>{{ index + 1 }}</span>
+              <p>{{ step }}</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
       <section class="works-overview">
         <article
           v-for="summary in content.summaries"
@@ -77,6 +154,116 @@
 </template>
 
 <script>
+const careAppsJa = [
+  {
+    title: '訪看かんたん計算',
+    icon: 'mdi-calculator-variant-outline',
+    summary: '訪問看護業務で必要な計算を、現場で分かりやすく行えるようにしたWindowsローカルアプリです。',
+    challenge: '訪問看護業務で必要な計算を、日々の業務の中でも迷わず簡単に行えるようにする必要がありました。',
+    solution: 'インターネット接続を必要としないWindowsアプリとして、現場での操作の分かりやすさを重視して設計・開発しました。実際の利用では「操作が簡単で分かりやすい」と評価され、後続の業務改善に関する相談にもつながりました。',
+    features: ['訪問看護業務で必要な計算の支援', '現場で迷いにくいシンプルな操作', 'オフラインで利用できるローカル動作'],
+    tech: ['Electron', 'TypeScript', 'Vue 3', 'Composition API', 'Vite', 'Vuetify', 'Vue Router', 'Pinia', 'SQLite', 'better-sqlite3', 'preload / contextBridge / IPC', 'Vitest', 'Vue Test Utils', 'electron-builder', 'NSIS'],
+    url: 'https://github.com/Cynthiadayo0309/hokan-kantan',
+  },
+  {
+    title: '訪看かんたん売上管理',
+    icon: 'mdi-chart-line',
+    summary: '複数施設の訪問看護実績と売上状況を、Windows PC上で入力・確認できるローカルアプリです。',
+    challenge: '複数施設・区分別の売上管理や確認を、定期業務の中でより扱いやすく行えるようにする必要がありました。',
+    solution: '売上の入力と確認を一つのWindowsデスクトップアプリにまとめ、インターネット接続なしで施設内PCから利用できるようにしました。',
+    features: ['複数施設の訪問看護実績の入力', '医療・精神科・介護ごとの売上管理', '月間売上、目標達成率、目標までの残額の確認', '月末売上予測、未入力状況、施設別売上状況の確認'],
+    tech: ['Electron 34', 'Vue 3 (SFC)', 'TypeScript 5', 'Vite 6', 'Vue Router', 'Pinia', 'SQLite', 'better-sqlite3', 'Main / Preload / Renderer', 'IPC', 'Vitest', 'Vue Test Utils', 'jsdom', 'ESLint', 'Prettier', 'vue-tsc', 'electron-builder', 'Windows x64', 'NSIS'],
+    url: 'https://github.com/Cynthiadayo0309/hokan-easy-sales-manager',
+  },
+  {
+    title: 'メディケア アセスメント管理システム',
+    icon: 'mdi-clipboard-text-outline',
+    summary: '会社指定のアセスメントシートを、Windows PCで入力・管理・帳票出力できるローカルアプリです。',
+    challenge: '紙やExcelを中心に扱われていたアセスメント情報を、施設内で入力・管理・再利用しやすくする必要がありました。',
+    solution: '入力から保存、再編集、印刷・PDF出力、過去データ管理までをWindowsアプリにまとめました。データはインストール先と分離して保存し、通常の再インストールで利用者データが消えない設計としています。',
+    features: ['アセスメント情報の入力、保存、再編集', '帳票としての印刷とPDF保存', '家族構成図の作成', '過去データの管理', '手動バックアップと復元'],
+    tech: ['Vue 3', 'TypeScript (strict)', 'Vue Router', 'Vite', 'Tauri 2', 'Rust', 'SQLite / rusqlite / Tauri SQL', 'html2canvas', 'jsPDF', 'ZIP / SHA-256 backup', 'Vitest', 'Cargo test', 'NSIS'],
+    url: 'https://github.com/Cynthiadayo0309/medicare_assessment',
+  },
+]
+
+const careAppsEn = [
+  {
+    title: 'Hokan Kantan Calculator',
+    icon: 'mdi-calculator-variant-outline',
+    summary: 'A local Windows application that makes calculations needed in visiting-nursing work easy to perform and understand.',
+    challenge: 'Calculations required in visiting-nursing work needed to be simple to complete accurately during day-to-day operations.',
+    solution: 'Designed and developed as an offline Windows application with straightforward operation as a priority. Its ease of use was positively received in practice and led to consultations about further workflow improvements.',
+    features: ['Support for calculations required in visiting-nursing work', 'A simple interface designed for quick operation', 'Offline local operation'],
+    tech: ['Electron', 'TypeScript', 'Vue 3', 'Composition API', 'Vite', 'Vuetify', 'Vue Router', 'Pinia', 'SQLite', 'better-sqlite3', 'preload / contextBridge / IPC', 'Vitest', 'Vue Test Utils', 'electron-builder', 'NSIS'],
+    url: 'https://github.com/Cynthiadayo0309/hokan-kantan',
+  },
+  {
+    title: 'Hokan Kantan Sales Manager',
+    icon: 'mdi-chart-line',
+    summary: 'A local Windows application for entering and reviewing visiting-nursing results and sales across multiple facilities.',
+    challenge: 'Regular sales management and review across facilities and service categories needed to be easier to handle in daily operations.',
+    solution: 'Consolidated sales entry and review in one Windows desktop application that can be used on facility PCs without an internet connection.',
+    features: ['Entry of visiting-nursing results for multiple facilities', 'Sales management by medical, psychiatric, and long-term care category', 'Monthly sales, target progress, and remaining target review', 'Month-end sales forecast, missing-entry, and facility-by-facility review'],
+    tech: ['Electron 34', 'Vue 3 (SFC)', 'TypeScript 5', 'Vite 6', 'Vue Router', 'Pinia', 'SQLite', 'better-sqlite3', 'Main / Preload / Renderer', 'IPC', 'Vitest', 'Vue Test Utils', 'jsdom', 'ESLint', 'Prettier', 'vue-tsc', 'electron-builder', 'Windows x64', 'NSIS'],
+    url: 'https://github.com/Cynthiadayo0309/hokan-easy-sales-manager',
+  },
+  {
+    title: 'Medicare Assessment Management System',
+    icon: 'mdi-clipboard-text-outline',
+    summary: 'A local Windows application for entering, managing, and exporting company-designated assessment sheets.',
+    challenge: 'Assessment information previously handled mainly in paper and Excel needed to be easier to enter, manage, and reuse within the facility.',
+    solution: 'Consolidated entry, saving, editing, printing, PDF export, and historical record management in a Windows application. Data is stored separately from the installation location so ordinary reinstalls do not remove user data.',
+    features: ['Assessment entry, saving, and re-editing', 'Printable reports and PDF export', 'Family relationship diagram creation', 'Historical data management', 'Manual backup and restore'],
+    tech: ['Vue 3', 'TypeScript (strict)', 'Vue Router', 'Vite', 'Tauri 2', 'Rust', 'SQLite / rusqlite / Tauri SQL', 'html2canvas', 'jsPDF', 'ZIP / SHA-256 backup', 'Vitest', 'Cargo test', 'NSIS'],
+    url: 'https://github.com/Cynthiadayo0309/medicare_assessment',
+  },
+]
+
+const careCaseStudyJa = {
+  eyebrow: 'Case Study',
+  title: '訪問看護の現場課題を、ソフトウェアで解決',
+  lead: '実際の訪問看護現場で伺った業務上の課題をもとに、必要な機能を整理し、Windowsアプリの要件整理・設計・開発・改善までを個人で行っています。',
+  adoptionTitle: '現場導入実績',
+  adoptionText: [
+    '知り合いの訪問看護施設の施設長公認のもと、開発したアプリを施設内の社員の方々に実際の業務で利用していただいています。',
+    '現場から相談された課題をもとに、手作業・計算・管理に関する負担を軽減できるよう、要件整理から設計・開発、フィードバックをもとにした改善までを個人で担当しています。',
+  ],
+  appsEyebrow: 'Applications',
+  appsTitle: '開発したアプリ',
+  challengeLabel: '課題',
+  solutionLabel: '解決方法',
+  featuresLabel: '主な機能',
+  repositoryLabel: 'GitHubで見る',
+  techLabel: '使用技術',
+  flowEyebrow: 'Process',
+  flowTitle: '開発から導入まで',
+  flow: ['現場の相談', '課題整理', '要件整理', '設計・開発', '現場へ提供', '実際の業務で利用', 'フィードバックをもとに改善'],
+  apps: careAppsJa,
+}
+
+const careCaseStudyEn = {
+  eyebrow: 'Case Study',
+  title: 'Solving visiting-nursing workflow challenges with software',
+  lead: 'Based on workflow challenges heard directly from a visiting-nursing setting, I independently organize requirements and handle the design, development, and improvement of Windows applications.',
+  adoptionTitle: 'In-use at a facility',
+  adoptionText: [
+    'With the approval of the director of a visiting-nursing facility I know, the applications are currently used by employees in their actual work.',
+    'Starting from issues raised by the field, I independently handle requirement organization, design, development, and feedback-driven improvement to help reduce the burden of manual work, calculations, and management.',
+  ],
+  appsEyebrow: 'Applications',
+  appsTitle: 'Applications developed',
+  challengeLabel: 'Challenge',
+  solutionLabel: 'Approach',
+  featuresLabel: 'Key features',
+  repositoryLabel: 'View on GitHub',
+  techLabel: 'Technologies',
+  flowEyebrow: 'Process',
+  flowTitle: 'From consultation to adoption',
+  flow: ['Field consultation', 'Issue clarification', 'Requirement organization', 'Design and development', 'Provided to the facility', 'Used in day-to-day work', 'Improved from feedback'],
+  apps: careAppsEn,
+}
+
 const worksJa = [
   {
     title: 'Difyを活用したRPAワークフロー構築',
@@ -237,8 +424,11 @@ const worksEn = [
 
 export default {
   computed: {
+    currentLang() {
+      return this.$route.params.lang === 'en' ? 'en' : 'ja'
+    },
     content() {
-      if (this.$route.params.lang === 'en') {
+      if (this.currentLang === 'en') {
         return {
           eyebrow: 'Works',
           title: 'Selected Experience',
@@ -255,6 +445,7 @@ export default {
           nextTitle: 'See the stack behind the work',
           nextText: 'The skills page summarizes technologies used across application development, infrastructure, operations, and security.',
           nextCta: 'View Skills',
+          careCaseStudy: careCaseStudyEn,
           works: worksEn,
         }
       }
@@ -275,6 +466,7 @@ export default {
         nextTitle: '実績を支える技術スタック',
         nextText: 'アプリケーション開発、インフラ、運用、セキュリティで扱ってきた技術を整理しています。',
         nextCta: 'スキルを見る',
+        careCaseStudy: careCaseStudyJa,
         works: worksJa,
       }
     },
